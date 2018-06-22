@@ -1,0 +1,255 @@
+/* -----------------Universal Styles-------------------------- */
+
+/* Set the base fontsize */
+html {
+  font-size: 18px;
+}
+
+/* Set font family */
+body {
+  font-family: "Helvetica", sans-serif;
+  /* line-height: 1.4; */
+}
+/* Set basic container parameters */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Set all h1,h4 to bold */
+h1,
+h4 {
+  font-weight: bold;
+}
+
+
+
+
+/* ---------------------Header-------------------------  */
+
+/* Sets colors for all of the header */
+.company {
+  background-color: black;
+  color: white;
+}
+
+/* Sets flexbox, alignment and top,bottom and left padding for header container */
+.company .container {
+  display: flex;
+  align-items: center;
+  padding: .66rem 0 .66rem 0.5rem;
+}
+
+/* Sets specific header logo parameters */
+.company img {
+  height: 1.5rem;
+  padding-right: 1rem;
+}
+
+
+/* ----------------------Banner --------------------------  */
+
+/* Background image and its settings */
+.banner {
+  background: url("https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/moto.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 25rem;
+}
+
+/* Sets the black background and the size around the text  */
+.headline {
+  position: relative;
+  top: 9rem;
+  width: 20rem;
+  padding: 2rem 3rem;
+  background-color: black;
+  color: white;
+}
+
+/* Sets the headlines h1 features */
+.headline h1 {
+  margin: 0.25rem 0;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+/* ------------------------Navigation Bar------------------- */
+
+/* Set red background, white text */
+nav {
+  background-color: firebrick;
+  color: white;
+}
+
+/* Flexbox for menu, centered and equal spacing, top and bottom padding */
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+
+/* To make the word menu disappear on a "screen greater than 1024" */
+.mobile-nav {
+  display: none;
+}
+/* -----------------------Products ----------------------------- */
+
+/* Flexbox for 3 products */
+.allthreeproducts {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+/* Set width of individual product relaitive to container */
+.individualproduct {
+  width: 30%;
+}
+
+/* flexbox for product images */
+.product-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 9rem;
+  padding: 2rem 0;
+  border: 4px solid black;
+}
+
+/* Set width of image inside product-image flexbox */
+.product-image img {
+  max-width: 8rem;
+}
+
+/*  */
+.product-description {
+  display: block;
+  padding: 0.5rem;
+  background-color: black;
+  text-align: center;
+  color: white;
+}
+
+/* -----------------------Business Information ----------------------------- */
+
+/* Same as allthreeproducts above to contain the two business entrees  */
+/* Can be combined ith allthreeproducts for more efficient css */
+.business-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+/* Set the width relative to the business-info flexbox */
+.info {
+  width: 35%;
+}
+
+/* Creates the black box around the business info */
+.info .title {
+  display: block;
+  padding: 1rem 2rem;
+  background-color: black;
+  color: white;
+}
+
+/* .................Footer.................................. */
+
+/* Creates the padding around footer. Container is inside footer giving left alignment */
+
+/* footer {
+  padding: 5rem 0rem;
+  margin-top: 4rem;
+  background-color: black;
+  color: white;
+} */
+
+.bottombar{
+  padding: 5rem 0rem;
+  margin-top: 4rem;
+  background-color: black;
+  color: white;
+}
+
+/* .........For screens with width less than 1024 i.e. tablet size....... */
+
+@media only screen and (max-width: 1024px) {
+
+/* Stops the list menu being displayed */
+  nav ul {
+    display: none;
+  }
+
+/* Makes the word Menu centered in the red block */
+  .mobile-nav {
+    display: block;
+    text-align: center;
+  }
+
+/*  Changes the products widths to 47% of the screen */
+  .individualproduct {
+    width: 47%;
+  }
+
+/* Makes the glasses product disappear when tablet size */
+  .individualproduct.glasses {
+    display: none;
+  }
+}
+
+/* .........For screens with width less than 470 i.e.smart phone size....... */
+
+@media only screen and (max-width: 470px) {
+
+/* Reduces the size of the banner to 15 rem, the image gets resized */
+  .banner {
+    height: 15rem;
+  }
+
+/* Make the black padding around the headline smaller  */
+  .headline {
+    width: 100%;
+    padding: 1rem 2rem;
+    top: 10rem;
+  }
+
+/* Change headkine h1 and h4 */
+  .headline h4 {
+    font-size: .77rem;
+  }
+
+  .headline h1 {
+    font-size: 1rem;
+  }
+
+/* Set the 2 containers as flexwrap so that they go on top of each other */
+  .allthreeproducts,
+  .business-info {
+    flex-wrap: wrap;
+  }
+
+/* Each of the products changes width to 90% of their container */
+  .individualproduct {
+    width: 90%;
+    margin: auto;
+  }
+
+/* Don't display the watch product */
+  /* .product.watch {
+    display: none;
+  } */
+
+/* The info bits now stretch to 90% of screen */
+  .info {
+    width: 90%;
+    margin: 0.5rem auto;
+  }
+
+/* footer is alighned to the center */
+  .bottombar {
+    text-align: center;
+  }
+}
